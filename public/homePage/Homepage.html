@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense tracker Home</title>
+    <link rel="stylesheet" href="../CSS/signup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Creating a form to Take input details, which on submitting will call userDetails -->
+    <div class="expensehome" id="div1">
+        <form onsubmit="saveExpense(event)" id="formtag">
+            <label> Expense Amount</label><br>
+            <input type="number" id="expenseamount" name="expamount" placeholder="Rs. XXXXX/-" required><br><br>
+            <label>Description</label><br>
+            <input type="text" id="expdescp" name="expdescription" placeholder="Ex : Dinner Party on Eid"
+                required><br><br>
+
+            <label> Category</label><br>
+            <select id="category">
+                <option value="Fuel">Income</option>
+                <option value="Fuel">Fuel</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Ration">Ration</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Dining">Dining</option>
+                <option value="OTT">OTT Subscription</option>
+                <option value="Veggies">Veggies</option>
+                <option value="Dailydairy">Daily-Purchases</option>
+            </select>
+
+            <button class=" btn btn-primary form" type="submit">Submit</button>
+
+        </form><br><br>
+
+        <button class ="btn btn-primary" type="submit" id="premium">
+            Buy Premium Membership
+        </button>
+        <p id="puser"></p>
+
+        <p id="leaderboardresponse"></p>
+        <button class ="btn btn-primary"type="submit" id="leaderboard"
+            onclick="leaderboard()">
+            Show Leader Board</button><br> <br>
+
+        <form action="../reportGenerator/reportgenerator.html">
+            <button class ="btn btn-primary" type="submit" id="report">
+                Generate Report
+            </button>
+        </form> <br>
+
+
+        <button class ="btn btn-primary"  type="submit" id="download"
+            onclick="download()">
+            Download</button><br> 
+        <p id="downloadResponse"></p>
+
+        <p id="oldfiles"></p>
+        <button class="btn btn-primary"  type="submit" id="oldfiles"
+            onclick="oldfiles()">
+            Old Downloads</button><br> <br>
+            <p id="olddownloadResponse"></p>
+
+
+            <button class="btn btn-primary"  type="submit" id="logout"
+            onclick="logout()">
+            logout</button>
+
+
+
+
+
+        <!-- <button style="background-color: rgb(140, 208, 219); border-radius: 1px;" type="submit" id="page"
+            onclick="paginate()">
+            </button><br> <br> -->
+
+    </div>
+    <div class="exp">
+        
+       
+    </div>
+
+     
+  
+      <div class="container">
+        <div class="row">
+
+        <div class="col-md-4">
+            <div class="float-container" style="display: inline-block;">
+
+    
+                <label style="font-weight: 800;">Expenses</label>
+                <select id="NumberofRecords" >
+                    <option value="none" selected disabled hidden>
+                        Select an Option </option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                </select> 
+                <button class="btn btn-primary" onclick="getter()">
+                    Get
+                </button>
+          
+            
+          </div>
+            <ul id="listofexpenses"></ul>
+            <div class="pagination" id="pagination"></div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div id="ldr"></div>
+            <ul id="listoftop"></ul>
+
+        </div>
+
+        <div class="col-md-4"> 
+
+            <div id="url"></div>
+            <ul id="listofurls"></ul>
+        </div>
+
+        </div>
+      </div>
+
+    
+
+    
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script src="./Homepage.js"></script>
+
+ 
+</body>
+
+</html>

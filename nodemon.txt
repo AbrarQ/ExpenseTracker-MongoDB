@@ -1,0 +1,15 @@
+ {
+    "env" :  {
+         "RAZORPAY_KEY_ID" : "rzp_test_BvTZdqA87HD3ae",
+ "RAZORPAY_KEY_SECRET" : "z1jb6Fpf9usJxH0CbYC7LZRr",
+ "SECRET_TOKEN" :"I AM BAD BOY",
+ "API_KEY" : "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",
+ "BUCKET_NAME" : "expensetracker88856",
+ "IAM_USER_KEY": "AKIAX34NXHL4XTIM3EXT",
+ "IAM_USER_SECRET" : "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",
+ "MYSQL_USER" : "root",
+ "MYSQL_PASS" : "H3lloworld!",
+ "JWT_SECRET_KEY" : "secretkey"
+
+     }
+ }
